@@ -14,7 +14,7 @@
   <strong>Books:</strong>
   <% Book.where(author: @author).each do |b| %>
 
-    <%= react_component('Book', book: b )  %>
+    <%= react_component('LazyBook', url: url_for(b) )  %>
 
   <% end %>
 </p>
