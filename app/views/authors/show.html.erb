@@ -10,5 +10,14 @@
   <%= @author.age %>
 </p>
 
+<p>
+  <strong>Books:</strong>
+  <% Book.where(author: @author).each do |b| %>
+
+    <%= react_component('Book', book: b )  %>
+
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_author_path(@author) %> |
 <%= link_to 'Back', authors_path %>
